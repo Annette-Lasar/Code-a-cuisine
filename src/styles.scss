@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use './scss-styles/index.scss';
+
+body {
+  min-height: 100vh;
+}
+
+.light-btn {
+  padding: 1em 1.5em;
+  width: fit-content;
+  background-color: index.$secondary-btn-bg;
+  color: index.$secondary-btn-text;
+  text-decoration: none;
+}
+
+.light-btn a {
+  text-decoration: none;
+  color: index.$secondary-btn-text;
+}

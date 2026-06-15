@@ -1,0 +1,12 @@
+@use 'variables';
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  color: variables.$text-color-light;
+  font-size: 3rem;
+  font-weight: 700;
+}
