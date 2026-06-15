@@ -52,10 +52,20 @@ section {
   }
 
   .deco-food {
+    height: 100%;
     min-height: 100vh;
     position: absolute;
     top: 0;
-    right: -60%;
+    right: -180px;
+  }
+}
+
+@media (min-width: 50em) {
+  section {
+    padding: 0 0 0 2em;
+    .deco-food {
+      right: 0;
+    }
   }
 }
 

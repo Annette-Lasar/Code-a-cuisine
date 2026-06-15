@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'cuis-preferences',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './preferences.html',
   styleUrl: './preferences.scss',
 })
