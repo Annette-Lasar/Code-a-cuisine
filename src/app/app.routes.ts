@@ -11,27 +11,51 @@ export const routes: Routes = [
   {
     path: '',
     component: MainContent,
+    data: {
+      theme: 'dark',
+    },
   },
   {
     path: 'generate-recipe',
     component: GenerateRecipe,
+    data: {
+      theme: 'light',
+    },
   },
   {
     path: 'preferences',
     component: Preferences,
+    data: {
+      theme: 'light',
+    },
   },
   {
     path: 'results',
     component: Results,
+    data: {
+      theme: 'dark',
+    },
   },
 
-  { path: 'recipe/:id', component: RecipeView },
+  {
+    path: 'recipe/:id',
+    component: RecipeView,
+    data: {
+      theme: 'light',
+    },
+  },
   {
     path: 'cookbook',
     component: Cookbook,
+    data: {
+      theme: 'light',
+    },
   },
   {
     path: 'cuisine/:cuisine',
     component: CuisineRecipes,
+    data: {
+      theme: 'light',
+    },
   },
 ];

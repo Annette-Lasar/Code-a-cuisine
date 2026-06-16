@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Logo } from '../../shared/components/logo/logo';
 import { RouterModule } from '@angular/router';
+import { ThemeService } from '../../shared/services/theme.service';
 
 @Component({
   selector: 'cuis-hero',
@@ -8,4 +9,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './hero.html',
   styleUrl: './hero.scss',
 })
-export class Hero {}
+export class Hero {
+  private themeService = inject(ThemeService);
+
+  getThemeClass(): string {
+    return this.themeService.currentTheme();
+  }
+}

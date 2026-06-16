@@ -1,7 +1,12 @@
-<h1>Choose your preferences</h1>
-<a routerLink="/generate-recipe">
-  <img src="/img/ui/arrow-green-left.svg" alt="" />
-  <span>Ingredients</span>
-</a>
-<p>preferences works!</p>
-<a routerLink="/results">Generate a recipe</a>
+<section class="page">
+  <header>
+    <cuis-logo />
+  </header>
+  <h1 [class]="'content-h1-theme-' + getThemeClass()">Choose your preferences</h1>
+  <a routerLink="/generate-recipe">
+    <img src="/img/ui/arrow-green-left.svg" alt="" />
+    <span>Ingredients</span>
+  </a>
+  <p>preferences works!</p>
+  <a routerLink="/results">Generate a recipe</a>
+</section>

@@ -6,7 +6,32 @@ body {
 
 h1 {
   font-family: 'Ubuntu', sans-serif;
+}
+
+.hero-h1-theme-dark {
   color: variables.$text-color-light;
   font-size: 3rem;
   font-weight: 700;
+}
+
+.content-h1-theme-dark,
+.content-h1-theme-light {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.content-h1-theme-dark {
+  color: variables.$text-color-light;
+}
+
+.content-h1-theme-light {
+  color: variables.$text-color-dark;
+}
+
+.text-color-theme-dark {
+  color: variables.$text-color-light;
+}
+
+.content-h1 {
+  color: variables.$text-color-dark;
 }

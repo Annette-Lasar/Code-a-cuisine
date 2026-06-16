@@ -1,5 +1,8 @@
-<section>
-  <h1>Cookbook</h1>
+<section class="page">
+  <header>
+    <cuis-logo/>
+  </header>
+  <h1 [class]="'content-h1-theme-' + getThemeClass()">Cookbook</h1>
   <div class="cuisine-wrapper">
     <div class="card">
       <a routerLink="/cuisine/italian">

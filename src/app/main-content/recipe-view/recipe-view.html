@@ -1,9 +1,17 @@
-<h1>Recipe Title</h1>
-<a href="/results">
-    <img src="/img/ui/arrow-green-left.svg" alt="">
+<section class="page">
+  <header>
+    <cuis-logo />
+  </header>
+  <h1 [class]="'content-h1-theme-' + getThemeClass()">Recipe Title</h1>
+  <a href="/results">
+    <img src="/img/ui/arrow-green-left.svg" alt="" />
     <span>Recipe results</span>
-</a>
-
-<a routerLink="/cookbook">Cookbook</a>
-<p>recipe-view works!</p>
-<a routerLink="/generate-recipe">Generate new recipe</a>
+  </a>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error molestias aperiam a aliquid
+    pariatur aliquam nulla.
+  </p>
+  <a routerLink="/cookbook">Cookbook</a>
+  <p>recipe-view works!</p>
+  <a routerLink="/generate-recipe">Generate new recipe</a>
+</section>

@@ -1,20 +1,20 @@
-<section>
+<section class="page">
   <div class="title-wrapper">
     <header>
       <cuis-logo />
     </header>
-    <p class="introduction">
+    <p class="introduction" [class]="'text-color-theme-' + getThemeClass()">
       AI-Powered <br />
       recipe generator
     </p>
-    <h1>Code à cuisine</h1>
+    <h1 [class]="'hero-h1-theme-' + getThemeClass()">Code à cuisine</h1>
     <div class="light-btn get-started-link">
       <a routerLink="/generate-recipe">Get started</a>
     </div>
   </div>
   <div class="cookbook-link-wrapper">
-    <p class="introduction">Hungry for inspiration?</p>
-    <a href="#" class="cookbook-link">
+    <p class="introduction" [class]="'text-color-theme-' + getThemeClass()">Hungry for inspiration?</p>
+    <a routerLink="/cookbook" class="cookbook-link" [class]="'text-color-theme-' + getThemeClass()">
       <span>Go to cookbook</span>
       <img src="/img/ui/arrow-beige-right.svg" alt="" />
     </a>

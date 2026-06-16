@@ -1,8 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
-
 @use './scss-styles/index.scss';
 
 body {
+  min-height: 100vh;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: index.$scrollbar-bg;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: index.$scrollbar-thumb;
+  border-radius: 10px;
+  border: 3px solid index.$scrollbar-bg;
+}
+
+.dark {
+  background-color: index.$primary-bg-color;
+}
+
+// .light {
+//   background-color: index.$white;
+// }
+
+.light {
+  background-color: lightyellow;
+}
+
+.page {
   min-height: 100vh;
 }
 

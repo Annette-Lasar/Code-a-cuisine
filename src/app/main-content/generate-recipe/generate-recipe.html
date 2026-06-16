@@ -1,3 +1,9 @@
-<h1 class="light">Generate recipe</h1>
-<p>generate-recipe works!</p>
-<a routerLink="/preferences">Next step</a>
+<section class="page">
+  <header>
+    <cuis-logo />
+  </header>
+
+  <h1 [class]="'content-h1-theme-' + getThemeClass()">Generate recipe</h1>
+  <h2>Add ingredients</h2>
+  <a routerLink="/preferences">Next step</a>
+</section>

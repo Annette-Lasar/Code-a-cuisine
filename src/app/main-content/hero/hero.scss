@@ -1,8 +1,6 @@
 @use '../../../scss-styles/variables';
 
 section {
-  min-height: 100vh;
-  background-color: variables.$primary-bg-color;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -29,7 +27,6 @@ section {
     margin: 0 0 1em;
     font-size: 1.4rem;
     font-weight: 600;
-    color: variables.$text-color-light;
   }
 
   .cookbook-link-wrapper {
@@ -38,7 +35,6 @@ section {
       display: flex;
       align-items: center;
       gap: 0.5em;
-      color: variables.$text-color-light;
       text-decoration: none;
       img {
         opacity: 0;
