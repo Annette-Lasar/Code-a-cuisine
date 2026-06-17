@@ -4,34 +4,46 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-h1 {
-  font-family: 'Ubuntu', sans-serif;
-}
-
 .hero-h1-theme-dark {
+  font-family: 'Ubuntu', sans-serif;
   color: variables.$text-color-light;
   font-size: 3rem;
   font-weight: 700;
 }
 
 .content-h1-theme-dark,
-.content-h1-theme-light {
-  font-size: 2rem;
-  font-weight: 500;
+.content-h1-theme-light,
+.content-h2-theme-dark,
+.content-h2-theme-light {
+  font-family: 'Quicksand', sans-serif;
 }
 
-.content-h1-theme-dark {
+.content-h1-theme-dark,
+.content-h1-theme-light {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.content-h1-theme-dark,
+.content-h2-theme-dark {
   color: variables.$text-color-light;
 }
 
-.content-h1-theme-light {
+.content-h1-theme-light,
+.content-h2-theme-light {
   color: variables.$text-color-dark;
+}
+
+.content-h2-theme-dark,
+.content-h2-theme-light {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .text-color-theme-dark {
   color: variables.$text-color-light;
 }
 
-.content-h1 {
+.text-color-theme-light {
   color: variables.$text-color-dark;
 }

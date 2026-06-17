@@ -1,11 +1,9 @@
-@use "../../../scss-styles/variables";
+@use '../../../scss-styles/variables';
 
 section {
-    padding: 1em;
-
-    h1 {
-        padding: 0.5em 0;
-        background-color: variables.$title-banner;
-        text-align: center;
-    }
+  h1 {
+    padding: 0.5em 0;
+    background-color: variables.$title-banner;
+    text-align: center;
+  }
 }

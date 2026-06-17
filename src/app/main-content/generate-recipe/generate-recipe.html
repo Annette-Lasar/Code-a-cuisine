@@ -4,6 +4,45 @@
   </header>
 
   <h1 [class]="'content-h1-theme-' + getThemeClass()">Generate recipe</h1>
-  <h2>Add ingredients</h2>
+  <h2 [class]="'content-h2-theme-' + getThemeClass()">Add ingredients</h2>
+  <p [class]="'text-color-theme-' + getThemeClass()">
+    Got random stuff in your kitchen? Pop it in — we’ve got the perfect recipe waiting.
+  </p>
+
+  <div class="input-wrapper">
+    <form [formGroup]="ingredientForm" (ngSubmit)="submitForm()">
+
+  <div class="ingredient-input-wrapper">
+    <label for="ingredient_input">Ingredient</label>
+    <input
+      id="ingredient_input"
+      type="text"
+      formControlName="ingredient"
+    />
+  </div>
+
+  <div class="size-input-wrapper">
+    <label for="size_input">Serving size</label>
+
+    <input
+      id="size_input"
+      type="number"
+      formControlName="amount"
+    />
+
+    <select formControlName="unit">
+      <option value="gram">gram</option>
+      <option value="ml">ml</option>
+      <option value="piece">piece</option>
+    </select>
+  </div>
+
+  <button type="submit">
+    <img src="/img/ui/add-green.svg" alt="" />
+  </button>
+
+</form>
+  </div>
+
   <a routerLink="/preferences">Next step</a>
 </section>

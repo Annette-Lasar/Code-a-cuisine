@@ -22,15 +22,16 @@ body {
   background-color: index.$primary-bg-color;
 }
 
-// .light {
-//   background-color: index.$white;
-// }
-
 .light {
-  background-color: lightyellow;
+  background-color: index.$white;
 }
 
+// .light {
+//   background-color: lightyellow;
+// }
+
 .page {
+  padding: 1em;
   min-height: 100vh;
 }
 
