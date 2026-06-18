@@ -9,7 +9,88 @@ section {
     margin: 0.5em 0;
   }
 
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    label {
+      font-weight: 500;
+    }
+    .ingredient-input-wrapper,
+    .size-input-wrapper {
+      margin: 1em 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    .ingredient-input-wrapper {
+      .ingredient-input {
+        padding: 0 1em;
+        height: 36px;
+        border-radius: 48px;
+        border: 2px solid variables.$normal-input-border;
+        background-color: variables.$input-bg;
+      }
+      .ingredient-input:focus-visible {
+        border: 2px solid variables.$dark-border-or-outline;
+      }
+    }
+    .serving-size-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      .size-input {
+        width: 76px;
+      }
+      .size-input,
+      select {
+        padding: 0 1em;
+        height: 36px;
+        border-radius: 48px;
+        border: 2px solid variables.$normal-input-border;
+        background-color: variables.$input-bg;
+      }
+      .size-input:focus-visible,
+      select:focus-visible {
+        border: 2px solid variables.$dark-border-or-outline;
+      }
+      .add-btn {
+        padding: 0.5em;
+        height: 36px;
+        width: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: variables.$tertiary-btn-bg;
+        border-radius: 100%;
+        border: 2px solid variables.$tertiary-btn-bg;
+        cursor: pointer;
+      }
+      .add-btn:focus-visible {
+        border: 2px solid variables.$dark-border-or-outline;
+      }
+    }
+  }
+
   p {
     font-weight: 600;
+  }
+
+  .list-box {
+    p {
+      margin: 0 0 1em;
+      font-weight: 500;
+    }
+    .ingredients-list {
+      padding: 0 0 0 1.5em;
+      li {
+        margin: 0.5em 0;
+        list-style-type: disc;
+      }
+    }
+  }
+
+  .nex-step-link {
+    margin: 0 auto;
   }
 }

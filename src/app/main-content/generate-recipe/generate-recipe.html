@@ -9,40 +9,47 @@
     Got random stuff in your kitchen? Pop it in — we’ve got the perfect recipe waiting.
   </p>
 
-  <div class="input-wrapper">
+  <div class="input-wrapper green-box">
     <form [formGroup]="ingredientForm" (ngSubmit)="submitForm()">
+      <div class="ingredient-input-wrapper">
+        <label for="ingredient_input">Ingredient</label>
+        <input
+          id="ingredient_input"
+          class="ingredient-input"
+          type="text"
+          formControlName="ingredient"
+        />
+      </div>
 
-  <div class="ingredient-input-wrapper">
-    <label for="ingredient_input">Ingredient</label>
-    <input
-      id="ingredient_input"
-      type="text"
-      formControlName="ingredient"
-    />
+      <div class="size-input-wrapper">
+        <label for="size_input">Serving size</label>
+        <div class="serving-size-wrapper">
+          <input id="size_input" class="size-input" type="number" formControlName="amount" />
+
+          <select formControlName="unit">
+            <option value="gram">gram</option>
+            <option value="ml">ml</option>
+            <option value="piece">piece</option>
+          </select>
+          <button class="add-btn" type="submit">
+            <img src="/img/ui/add-green.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </form>
   </div>
 
-  <div class="size-input-wrapper">
-    <label for="size_input">Serving size</label>
-
-    <input
-      id="size_input"
-      type="number"
-      formControlName="amount"
-    />
-
-    <select formControlName="unit">
-      <option value="gram">gram</option>
-      <option value="ml">ml</option>
-      <option value="piece">piece</option>
-    </select>
+  <div class="list-box green-box">
+    <p>List of your ingredients</p>
+    <ul class="ingredients-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
   </div>
 
-  <button type="submit">
-    <img src="/img/ui/add-green.svg" alt="" />
-  </button>
-
-</form>
+  <div class="dark-btn nex-step-link">
+    <a routerLink="/preferences">Next step</a>
   </div>
-
-  <a routerLink="/preferences">Next step</a>
 </section>

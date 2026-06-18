@@ -4,6 +4,8 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 import { ThemeService } from '../../shared/services/theme.service';
 
+import { Ingredient } from '../../shared/interfaces/ingredient.interface';
+
 import { Logo } from '../../shared/components/logo/logo';
 
 @Component({
@@ -16,14 +18,17 @@ export class GenerateRecipe {
   private themeService = inject(ThemeService);
   private fb = inject(FormBuilder);
 
+  currentIngredients: Ingredient[] = [];
+
   ingredientForm = this.fb.group({
     ingredient: [''],
-    amount: [''],
+    amount: [],
     unit: ['gram'],
   });
 
   submitForm() {
     console.log(this.ingredientForm.value);
+    this.currentIngredients.push(this.ingredientForm.value);
     
   }
 

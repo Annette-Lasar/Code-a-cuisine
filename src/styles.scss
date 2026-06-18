@@ -26,24 +26,40 @@ body {
   background-color: index.$white;
 }
 
-// .light {
-//   background-color: lightyellow;
-// }
-
 .page {
   padding: 1em;
   min-height: 100vh;
 }
 
-.light-btn {
+.green-box {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: index.$green-card-bg;
+  border-radius: 20px;
+}
+
+.light-btn,
+.dark-btn {
   padding: 1em 1.5em;
   width: fit-content;
+}
+
+.light-btn {
   background-color: index.$secondary-btn-bg;
   color: index.$secondary-btn-text;
-  text-decoration: none;
 }
 
 .light-btn a {
   text-decoration: none;
   color: index.$secondary-btn-text;
+}
+
+.dark-btn {
+  background-color: index.$primary-btn-bg;
+  color: index.$primary-btn-text;
+}
+
+.dark-btn a {
+  text-decoration: none;
+  color: index.$primary-btn-text;
 }
