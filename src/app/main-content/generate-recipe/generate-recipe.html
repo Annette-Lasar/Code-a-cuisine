@@ -6,50 +6,72 @@
   <h1 [class]="'content-h1-theme-' + getThemeClass()">Generate recipe</h1>
   <h2 [class]="'content-h2-theme-' + getThemeClass()">Add ingredients</h2>
   <p [class]="'text-color-theme-' + getThemeClass()">
-    Got random stuff in your kitchen? Pop it in — we’ve got the perfect recipe waiting.
+    Got random stuff in your kitchen? Pop it in — we&apos;ve got the perfect recipe waiting.
   </p>
-
-  <div class="input-wrapper green-box">
-    <form [formGroup]="ingredientForm" (ngSubmit)="submitForm()">
-      <div class="ingredient-input-wrapper">
-        <label for="ingredient_input">Ingredient</label>
-        <input
-          id="ingredient_input"
-          class="ingredient-input"
-          type="text"
-          formControlName="ingredient"
-        />
-      </div>
-
-      <div class="size-input-wrapper">
-        <label for="size_input">Serving size</label>
-        <div class="serving-size-wrapper">
-          <input id="size_input" class="size-input" type="number" formControlName="amount" />
-
-          <select formControlName="unit">
-            <option value="gram">gram</option>
-            <option value="ml">ml</option>
-            <option value="piece">piece</option>
-          </select>
-          <button class="add-btn" type="submit">
-            <img src="/img/ui/add-green.svg" alt="" />
-          </button>
+  <div class="box-wrapper">
+    <div class="input-wrapper green-box">
+      <form [formGroup]="ingredientForm" (ngSubmit)="submitForm()">
+        <div class="ingredient-input-wrapper">
+          <label for="ingredient_input">Ingredient</label>
+          <input
+            id="ingredient_input"
+            class="ingredient-input"
+            type="text"
+            formControlName="name"
+          />
         </div>
-      </div>
-    </form>
-  </div>
 
-  <div class="list-box green-box">
-    <p>List of your ingredients</p>
-    <ul class="ingredients-list">
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-    </ul>
-  </div>
+        <div class="size-input-wrapper">
+          <label for="size_input">Serving size</label>
+          <div class="serving-size-wrapper">
+            <input id="size_input" class="size-input" type="number" formControlName="amount" min="1" />
 
-  <div class="dark-btn nex-step-link">
+            <select formControlName="unit">
+              <option value="">Choose unit</option>
+              <option value="g">gram</option>
+              <option value="ml">ml</option>
+              <option value="piece">piece</option>
+            </select>
+            <button class="icon-btn single cursor-pointer" type="submit" [disabled]="ingredientForm.invalid">
+              <img src="/img/ui/add-green.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="list-box green-box">
+      <p>List of your ingredients</p>
+      <ul class="ingredients-list">
+        @for (ingredient of currentIngredients; track ingredient.id) {
+          <li>
+            <div class="ingredient-row">
+              <div class="ingredient-wrapper">
+                <div class="amount-wrapper">
+                  <span>{{ ingredient.amount }}</span>
+                  @if (ingredient.unit !== 'piece') {
+                    <span>{{ ingredient.unit }}</span>
+                  }
+                </div>
+                <span>
+                  {{ ingredient.name }}
+                </span>
+              </div>
+              <div class="action-wrapper">
+                <button class="icon-btn in-line cursor-pointer" aria-label="Edit ingredient">
+                  <img src="/img/ui/edit.svg" alt="" />
+                </button>
+                <button class="icon-btn in-line cursor-pointer" aria-label="Delete ingredient">
+                  <img src="/img/ui/delete.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+  <div class="dark-btn next-step-link">
     <a routerLink="/preferences">Next step</a>
   </div>
 </section>

@@ -10,9 +10,14 @@ section {
   }
 
   .input-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: blue 2px solid;
+    form {
+      border: orchid 2px solid;
+    }
     label {
       font-weight: 500;
     }
@@ -54,21 +59,6 @@ section {
       select:focus-visible {
         border: 2px solid variables.$dark-border-or-outline;
       }
-      .add-btn {
-        padding: 0.5em;
-        height: 36px;
-        width: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: variables.$tertiary-btn-bg;
-        border-radius: 100%;
-        border: 2px solid variables.$tertiary-btn-bg;
-        cursor: pointer;
-      }
-      .add-btn:focus-visible {
-        border: 2px solid variables.$dark-border-or-outline;
-      }
     }
   }
 
@@ -77,20 +67,68 @@ section {
   }
 
   .list-box {
+    width: 100%;
+    border: blue 2px solid;
     p {
       margin: 0 0 1em;
       font-weight: 500;
     }
     .ingredients-list {
-      padding: 0 0 0 1.5em;
+      padding: 0 0 0 1em;
+
       li {
         margin: 0.5em 0;
+
         list-style-type: disc;
+        .ingredient-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1em;
+          border: red 1px solid;
+          .ingredient-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            .amount-wrapper {
+              min-width: 40px;
+            }
+          }
+          .action-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+          }
+        }
       }
     }
   }
 
-  .nex-step-link {
+  .next-step-link {
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 50em) {
+  section {
+    .box-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 2em;
+      border: red 2px solid;
+    }
+  }
+
+  @media (min-width: 60em) {
+    h1 {
+      color: royalblue;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1em;
+    }
   }
 }

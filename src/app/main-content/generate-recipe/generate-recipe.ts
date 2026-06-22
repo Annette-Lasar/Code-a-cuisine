@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { ThemeService } from '../../shared/services/theme.service';
 
@@ -19,17 +19,39 @@ export class GenerateRecipe {
   private fb = inject(FormBuilder);
 
   currentIngredients: Ingredient[] = [];
+  private nextId = 1;
 
   ingredientForm = this.fb.group({
-    ingredient: [''],
-    amount: [],
-    unit: ['gram'],
+    name: ['', Validators.required],
+    amount: [100, [Validators.required, Validators.min(1)]],
+    unit: ['', Validators.required],
   });
 
   submitForm() {
-    console.log(this.ingredientForm.value);
-    this.currentIngredients.push(this.ingredientForm.value);
-    
+    const ingredient = this.createIngredient();
+    if (this.ingredientForm.invalid) return;
+    this.addIngredient(ingredient);
+
+    this.resetForm();
+  }
+
+  createIngredient(): Ingredient {
+    const value = this.ingredientForm.value;
+
+    return {
+      id: this.nextId++,
+      name: value.name ?? '',
+      amount: value.amount ?? 0,
+      unit: value.unit ?? '',
+    };
+  }
+
+  addIngredient(ingredient: Ingredient): void {
+    this.currentIngredients.push(ingredient);
+  }
+
+  resetForm(): void {
+    this.ingredientForm.reset();
   }
 
   getThemeClass(): string {
